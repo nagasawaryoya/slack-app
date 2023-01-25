@@ -150,7 +150,7 @@ const onReactionAdded = (json) => {
       return "Not found message";
     }
 
-    const country = `:${match}:`;
+    const country = `:flag-${match}:`;
 
     if (isTranslated(messages, country)) {
       console.error("Already Translated");
