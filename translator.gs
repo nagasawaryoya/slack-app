@@ -108,9 +108,14 @@ const getPermalink = (payload) => {
   return json.permalink;
 };
 
+/**
+ * @param {string[]} messages
+ * @param {string} county
+ * @returns {boolean}
+ */
 const isTranslated = (messages, county) => {
   return messages.some(
-    (message) => message.text.substring(0, county.length) === county
+    (message) => new RegExp(county).test(message.text)
   );
 };
 
